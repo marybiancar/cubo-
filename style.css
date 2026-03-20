@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    perspective: 1200px;
+    overflow: hidden;
+}
+
+.scene {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    /* Transição suave para quando o mouse sai */
+    transition: transform 0.1s ease-out;
+}
+
+.piece {
+    position: absolute;
+    width: 80px; /* Tamanho da peça */
+    height: 80px;
+    transform-style: preserve-3d;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffffff; /* Cubo Branco */
+    border: 2px solid #ccc; /* Linhas de separação */
+    box-sizing: border-box;
+    opacity: 0.95;
+}
+
+/* Configuração das faces das pecinhas */
+.front  { transform: rotateY(0deg) translateZ(40px); }
+.back   { transform: rotateY(180deg) translateZ(40px); }
+.right  { transform: rotateY(90deg) translateZ(40px); }
+.left   { transform: rotateY(-90deg) translateZ(40px); }
+.top    { transform: rotateX(90deg) translateZ(40px); }
+.bottom { transform: rotateX(-90deg) translateZ(40px); }
